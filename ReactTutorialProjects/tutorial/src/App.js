@@ -1,5 +1,5 @@
 /* eslint-disable */
-import ControlledInputs from "./components/Form/ControlledInputs";
+// import ControlledInputs from "./components/Form/ControlledInputs";
 import UncontrolledInputs from "./components/Form/UseRef/UncontrolledInputs";
 import ShowHide from "./components/short-Circuit/ShowHide";
 import ConditionalReturn from "./components/useEffect/ConditionalReturn";
