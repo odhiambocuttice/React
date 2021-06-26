@@ -1,0 +1,47 @@
+.topBar {
+  width: 100%;
+  height: 70px;
+  background-color: rgb(26, 26, 26);
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+}
+
+.topBarLeft,
+.topBarRight {
+  flex: 3;
+}
+
+.topBarLeft {
+  margin-left: 150px;
+}
+
+.topBarRight {
+  margin-right: 50px;
+}
+
+.topIcon {
+  font-size: 34px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.topBarList {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  text-transform: lowercase;
+}
+
+.topBarListItem {
+  margin-left: 20px;
+  font-size: 18px;
+  color: white;
+  font-weight: 100;
+  cursor: pointer;
+}
+/* .topBarCenter {
+  flex: 9;
+  background-color: #fff;
+} */
