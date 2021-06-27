@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "../../../styles/App.css";
+import "../../styles/App.css";
 
 export const AudioDetails = ({ activeColor, trackIndex, isPlaying }) => {
   useEffect(() => {

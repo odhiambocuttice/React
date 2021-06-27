@@ -1,7 +1,9 @@
 import "./home.css";
-import { AudioPlayer } from "./audioplayer/AudioPlayer";
+import { AudioPlayer } from "../audioplayer/AudioPlayer";
 import { tracks } from "../../tracks";
-import { About } from "./about/About";
+import { Posts } from "./Posts/Posts";
+import { About } from "../about/About";
+import { Shows } from "../shows/Shows";
 
 export const Home = () => {
   return (
@@ -9,7 +11,12 @@ export const Home = () => {
       <section className="section">
         <AudioPlayer tracks={tracks} />
       </section>
-
+      <section className="post-section">
+        <Posts />
+      </section>
+      <section>
+        <Shows />
+      </section>
       <section>
         <About />
       </section>
