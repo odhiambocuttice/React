@@ -1,0 +1,73 @@
+::-webkit-scrollbar {
+  width: 0px;
+}
+.container {
+  display: flex;
+  overflow-x: scroll;
+  width: 100%;
+  align-items: center;
+  align-content: center;
+  background-color: rgb(26, 26, 26);
+}
+
+.card {
+  flex-shrink: 0;
+  width: 400px;
+  height: 78vh;
+  border-radius: 5px;
+  margin: 15px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-top: 30px;
+}
+
+.menu {
+  position: relative;
+}
+
+/* .shows {
+  background-color: rgb(33, 183, 50);
+  height: 80vh;
+  margin-top: -70px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.showposters {
+  height: 78vh;
+  width: 100%;
+  margin-left: 10px;
+  display: inline-block;
+}
+
+.nav {
+  position: absolute;
+  top: 250px;
+  width: 300px;
+}
+
+.prev-poster {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  background-color: #fefefe;
+  padding: 5px;
+  cursor: pointer;
+  top: 10px;
+  font-weight: bold;
+}
+
+.next-poster {
+  position: absolute;
+  right: -1050px;
+  display: inline-block;
+  background-color: #ffffff;
+  padding: 5px;
+  cursor: pointer;
+  top: 10px;
+  font-weight: bold;
+} */

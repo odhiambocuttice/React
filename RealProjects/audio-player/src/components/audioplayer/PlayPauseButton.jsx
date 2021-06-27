@@ -1,10 +1,10 @@
 import React from "react";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
-import { ReactComponent as Play } from "../../../assets/icons/play.svg";
-import { ReactComponent as Pause } from "../../../assets/icons/pause.svg";
-import { ReactComponent as Prev } from "../../../assets/icons/prev.svg";
-import { ReactComponent as Next } from "../../../assets/icons/next.svg";
+import { ReactComponent as Play } from "../../assets/icons/play.svg";
+import { ReactComponent as Pause } from "../../assets/icons/pause.svg";
+import { ReactComponent as Prev } from "../../assets/icons/prev.svg";
+import { ReactComponent as Next } from "../../assets/icons/next.svg";
 
 export const PlayPauseButton = ({
   setIsPlaying,
