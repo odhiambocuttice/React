@@ -25,8 +25,23 @@ input[type="range"] {
   width: 100%;
   margin-bottom: 10px;
   border-radius: 8px;
-  background: #3b7677;
+  background: #02484a;
   transition: background 0.2s ease;
+  cursor: pointer;
+  background-color: #121212
+}
+
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 90px;
+  height: 24px;
+  border: 0;
+  border-radius: 50%;
+  background-image: url('../assets/icons/speaker.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
   cursor: pointer;
 }
 
@@ -69,6 +84,7 @@ input[type="range"] {
   width: 75%;
   margin: 0 auto 15px;
 }
+
 
 /* .audio:hover {
   transform: scale(1.1);
