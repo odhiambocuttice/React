@@ -10,6 +10,7 @@ export const AudioPlayer = (props) => {
   const [trackIndex, setTrackIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [trackProgress, setTrackProgress] = useState(0);
+  const [volume, setVolume] = useState(50)
 
   // Destructure for conciseness
   const { title, artist, color, image, audioSrc } = props.tracks[trackIndex];
@@ -21,12 +22,13 @@ export const AudioPlayer = (props) => {
 
   // Destructure for conciseness
   const { duration } = audioRef.current;
+  
 
   const currentPercentage = duration
     ? `${(trackProgress / duration) * 100}%`
     : "0%";
   const trackStyling = `
-     -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(${currentPercentage}, #fff), color-stop(${currentPercentage}, #777))
+     -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(${currentPercentage}, #02484a), color-stop(${currentPercentage}, #FAF0CB))
    `;
 
   const startTimer = () => {
@@ -47,6 +49,14 @@ export const AudioPlayer = (props) => {
     clearInterval(intervalRef.current);
     audioRef.current.currentTime = value;
     setTrackProgress(audioRef.current.currentTime);
+
+  };
+
+  const onVol = (value) => {
+    // Clear any timers already running
+    audioRef.current.volume = value;
+    setVolume(audioRef.current.volume);
+
   };
 
   const onScrubEnd = () => {
@@ -107,11 +117,11 @@ export const AudioPlayer = (props) => {
     };
   }, []);
 
-  useEffect(() => {
-    if (isPlaying || trackIndex) {
-      document.title = title + " by " + artist;
-    }
-  }, [trackIndex, isPlaying, artist, title]);
+  // useEffect(() => {
+  //   if (isPlaying || trackIndex) {
+  //     document.title = title + " by " + artist;
+  //   }
+  // }, [trackIndex, isPlaying, artist, title]);
 
   return (
     <>
@@ -145,7 +155,7 @@ export const AudioPlayer = (props) => {
             ></audio>
           </div> */}
 
-          <input
+          {/* <input
             type="range"
             value={trackProgress}
             step="1"
@@ -156,7 +166,20 @@ export const AudioPlayer = (props) => {
             onMouseUp={onScrubEnd}
             onKeyUp={onScrubEnd}
             style={{ background: trackStyling }}
-          />
+          /> */}
+          
+          <input
+          type="range"
+          min={0}
+          max={1}
+          step={0.02}
+          value={volume}
+          onChange={(e) => {
+            onVol(e.target.valueAsNumber)
+          }}
+          className="input"
+          style={{ background: trackStyling }}
+        />
         </div>
 
         <AudioDetails
