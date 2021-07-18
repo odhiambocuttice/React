@@ -28,9 +28,8 @@ input[type="range"] {
   background: #02484a;
   transition: background 0.2s ease;
   cursor: pointer;
-  background-color: #121212
+  background-color: #121212;
 }
-
 
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -39,7 +38,7 @@ input[type="range"]::-webkit-slider-thumb {
   height: 24px;
   border: 0;
   border-radius: 50%;
-  background-image: url('../assets/icons/speaker.svg');
+  background-image: url("../assets/icons/speaker.svg");
   background-position: center center;
   background-repeat: no-repeat;
   cursor: pointer;
@@ -65,7 +64,7 @@ input[type="range"]::-webkit-slider-thumb {
 .track-info {
   text-align: center;
   z-index: 1;
-  position: relative;
+  /* position: relative; */
 }
 
 .title {
@@ -84,7 +83,6 @@ input[type="range"]::-webkit-slider-thumb {
   width: 75%;
   margin: 0 auto 15px;
 }
-
 
 /* .audio:hover {
   transform: scale(1.1);
@@ -142,6 +140,7 @@ audio::-webkit-media-controls-play-button {
   width: 100%;
   display: flex;
   align-items: center;
+  z-index: 99;
   /* box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
   filter: blur(1px); */
 }
