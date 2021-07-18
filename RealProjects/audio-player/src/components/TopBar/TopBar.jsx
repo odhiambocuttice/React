@@ -1,8 +1,18 @@
+import { useState } from "react";
 import "./topbar.css";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { AllStories } from "../Pages/AllStories/AllStories";
 
 export const TopBar = () => {
+  // set the top bar to black when scrolling
+  const [isTopColor, setIsTopBarColor] = useState(false);
+  window.onscroll = () => {
+    setIsTopBarColor(window.pageYOffset === 0 ? false : true);
+    return () => (window.onscroll = null);
+  };
+
   return (
-    <div className="topBar">
+    <div className={isTopColor ? "topBarScroll" : "topBar"}>
       <div className="topBarLeft">
         <i className="topIcon fas fa-igloo"></i>
       </div>

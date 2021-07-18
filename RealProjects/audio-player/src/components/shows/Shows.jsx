@@ -1,41 +1,53 @@
 import "./shows.css";
-import alex from "../../assets/showsPosters/alex.jpg";
-import alexandreg from "../../assets/showsPosters/alexandreh.jpg";
-import glen from "../../assets/showsPosters/glen.jpg";
-import malena from "../../assets/showsPosters/malena.jpg";
-import romain from "../../assets/showsPosters/romain.jpg";
+import ArrowForwardIosRoundedIcon from "@material-ui/icons/ArrowForwardIosRounded";
+import ArrowBackIosRoundedIcon from "@material-ui/icons/ArrowBackIosRounded";
+import { SingleShow } from "../singleshow/singleshow";
+import { useState, useRef } from "react";
 
 export const Shows = () => {
-  const movies = [alex, alexandreg, glen, malena, romain];
+  const [postSlideNo, setPostSlideNo] = useState(false);
+  const [isShowArrow, setIsShowArrow] = useState(0);
+  const showRef = useRef();
+
+  const arrowClick = (direction) => {
+    setIsShowArrow(true);
+    const distance = showRef.current.getBoundingClientRect().x - 30;
+    if (direction === "arrow-left" && postSlideNo > 0) {
+      setPostSlideNo(postSlideNo - 1);
+      showRef.current.style.transform = `translateX(${320 + distance}px)`;
+    }
+    if (direction === "arrow-right" && postSlideNo < 2) {
+      setPostSlideNo(postSlideNo + 1);
+      showRef.current.style.transform = `translateX(${-320 + distance}px)`;
+    }
+  };
 
   return (
-    <>
-      <div className="container">
-        {movies.map((src) => (
-          <div
-            key={src}
-            className="card"
-            style={{
-              backgroundImage: `url(${src})`,
-            }}
-          />
-        ))}
+    <div className="menu">
+      <span>Our Shows</span>
+      <div className="wrapper">
+        <ArrowBackIosRoundedIcon
+          className="arrow-left"
+          style={{ display: !isShowArrow && "none" }}
+          onClick={() => {
+            arrowClick("arrow-left");
+          }}
+        />
+        <div className="shows" ref={showRef}>
+          <SingleShow />
+          <SingleShow />
+          <SingleShow />
+          <SingleShow />
+          <SingleShow />
+          <SingleShow />
+        </div>
+        <ArrowForwardIosRoundedIcon
+          className="arrow-right"
+          onClick={() => {
+            arrowClick("arrow-right");
+          }}
+        />
       </div>
-    </>
+    </div>
   );
-  // return (
-  //   <div className="menu">
-  //     <div className="shows">
-  //       <img src={alex} alt="" className="showposters" />
-  //       <img src={alexandreg} alt="" className="showposters" />
-  //       <img src={glen} alt="" className="showposters" />
-  //       <img src={malena} alt="" className="showposters" />
-  //       <img src={romain} alt="" className="showposters" />
-  //     </div>
-  //     <div className="nav">
-  //       <button className="prev-poster">Prev</button>
-  //       <button className="next-poster">Next</button>
-  //     </div>
-  //   </div>
-  // );
 };
